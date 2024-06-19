@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <load ="partials/header.html" />
-
     <section>
-      <h1>Example page title</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="./img/javascript.svg" alt="" />
+      <form class="search-form" id="search-form">
+        <input
+          class="serch-input"
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+        />
+        <button class="serch-btn" type="submit">Search</button>
+      </form>
     </section>
-
-    <!-- Loads the specified .html file -->
-    <load ="partials/vite-promo.html" />
+    <section>
+      <div class="gallery">
+        <!-- Картки зображень -->
+      </div>
+    </section>
+    <button type="button" class="load-more">Load more</button>
 
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/api.js"></script>
   </body>
 </html>
