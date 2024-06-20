@@ -1,64 +1,183 @@
-.search-form{
-   height: 100px;
-   background-color: yellowgreen;
+/* Ensure the body takes the full height */
+body {
+   margin: 0;
+   padding: 0;
    display: flex;
-   justify-content: center;
-   padding: 50px 0
-}
-.serch-input{
-   height: 40px;
-   padding: 10px;
-}
-.serch-btn{
-   height: 50px;
+   flex-direction: column;
+   align-items: center;
+   min-height: 100vh;
+   box-sizing: border-box;
+   background-color: #f0f0f0;
+   /* Main background color */
 }
 
+
+/* Fix the search form at the top */
+.serch-section {
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background-color: #e0e0e0;
+   /* Slightly different background for the fixed section */
+   padding: 20px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   /* Shadow for the fixed section */
+   z-index: 1000;
+   /* Ensure it is above other content */
+}
+
+/* Search form styling */
+.search-form {
+   width: 100%;
+   /* Full width */
+   display: flex;
+   justify-content: center;
+   /* Center content horizontally */
+   gap: 8px;
+   /* Space between input and button */
+   margin-bottom: 20px;
+   /* Space below the search form */
+}
+
+.search-input {
+   flex: 1;
+   /* Take up remaining space */
+   min-width: 700px;
+   /* Minimum width, increased to 2x */
+   padding: 20px;
+   /* Increased padding for height */
+   font-size: 16px;
+   /* Font size */
+   border: 1px solid #ddd;
+   /* Border color */
+   border-radius: 5px;
+   /* Rounded corners */
+   box-sizing: border-box;
+   /* Include padding and border in element's total width and height */
+}
+
+/* Search button styling */
+.search-btn {
+   background-color: #007BFF;
+   /* Blue background */
+   color: #FFFFFF;
+   /* White text */
+   padding: 20px 40px;
+   /* Padding for size, increased for height */
+   font-size: 16px;
+   /* Font size */
+   border: none;
+   /* Remove default border */
+   border-radius: 5px;
+   /* Rounded corners */
+   cursor: pointer;
+   /* Pointer cursor on hover */
+   text-align: center;
+   /* Center text */
+   display: inline-block;
+   /* Inline-block display */
+   transition: background-color 0.3s ease;
+   /* Smooth background color transition */
+}
+
+.search-btn:hover {
+   background-color: #0056b3;
+   /* Darker blue on hover */
+}
+
+.search-btn:active {
+   background-color: #00408d;
+   /* Even darker blue on click */
+}
+
+.search-btn:focus {
+   outline: none;
+   /* Remove outline on focus */
+   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+   /* Add a shadow on focus */
+}
 
 /* Container for the gallery */
 .gallery {
    display: flex;
    flex-wrap: wrap;
    gap: 16px;
-   /* Adjust the gap between cards as needed */
-   justify-content: space-between;
+   justify-content: flex-start;
+   padding-top: 120px;
+   /* Ensure content is below the fixed search form */
 }
 
 /* Individual photo card styling */
 .photo-card {
    flex: 1 1 calc(25% - 16px);
-   /* 25% width minus the gap */
+   max-width: calc(25% - 16px);
    box-sizing: border-box;
    border: 1px solid #ddd;
-   /* Add a border to the card */
    border-radius: 8px;
-   /* Rounded corners */
    overflow: hidden;
    background-color: #fff;
-   /* Background color */
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   /* Shadow for some depth */
 }
 
-/* Image inside the card */
 .photo-card img {
    width: 100%;
-   height: auto;
+   height: 270px;
+   /* Increased height */
+   object-fit: cover;
+   /* Ensure the image covers the area, cropping if necessary */
+   object-position: center;
+   /* Center the image within its container */
    display: block;
 }
 
-/* Info section inside the card */
+/* Info section inside the photo card */
 .photo-card .info {
-   padding: 16px;
+   background-color: #d0d0d0;
+   /* Darker background color for info section */
+   padding: 10px;
+   box-sizing: border-box;
+}
+
+/* Load more button styling */
+.load-more {
+   background-color: #007BFF;
+   /* Blue background */
+   color: #FFFFFF;
+   /* White text */
+   padding: 10px 20px;
+   /* Padding for size */
+   font-size: 16px;
+   /* Font size */
+   border: none;
+   /* Remove default border */
+   border-radius: 5px;
+   /* Rounded corners */
+   cursor: pointer;
+   /* Pointer cursor on hover */
    text-align: center;
+   /* Center text */
+   display: inline-block;
+   /* Inline-block display */
+   transition: background-color 0.3s ease;
+   /* Smooth background color transition */
+   margin-top: 20px;
+   /* Space above the button */
 }
 
-/* Individual info items styling */
-.photo-card .info-item {
-   margin: 8px 0;
+.load-more:hover {
+   background-color: #0056b3;
+   /* Darker blue on hover */
 }
 
-.photo-card .info-item b {
-   display: block;
-   font-size: 14px;
-   color: #333;
+.load-more:active {
+   background-color: #00408d;
+   /* Even darker blue on click */
+}
+
+.load-more:focus {
+   outline: none;
+   /* Remove outline on focus */
+   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+   /* Add a shadow on focus */
 }

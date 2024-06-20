@@ -30,14 +30,6 @@ function galleryHandler(searchQuery, page) {
       return result.data.hits;
     })
     .then(data => {
-      /* 
-      let htmlString = '';
-      data.forEach(image => {
-        const currentCard = imageCartHandler(image);
-        htmlString += currentCard;
-      });
-      galleryRef.innerHTML = htmlString;
-      */
       const galleryItems = data.map(elem => {
         return createCard(elem);
       });
