@@ -137,9 +137,14 @@ body {
    /* Darker background color for info section */
    padding: 10px;
    box-sizing: border-box;
+   display: flex;
+   font-size: 14px;
+   text-align: center;
+   justify-content: space-around;
+   
+
 }
 
-/* Load more button styling */
 .load-more {
    background-color: #007BFF;
    /* Blue background */
@@ -180,4 +185,8 @@ body {
    /* Remove outline on focus */
    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
    /* Add a shadow on focus */
+}
+
+.hidden {
+   visibility: hidden;
 }
