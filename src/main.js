@@ -19,16 +19,18 @@ loadBrnRef.addEventListener('click', e => {
 
 formRef.addEventListener('submit', e => {
   e.preventDefault();
+  page = 1;
+  loadBrnRef.classList.add('hidden');
   galleryRef.innerHTML = '';
   searchQuery = formRef.searchQuery.value;
-  galleryHandler(searchQuery, page);
-});
-
-galleryRef.addEventListener('click', e => {
-  e.preventDefault();
-  if (e.target.tagName == 'IMG') {
-    lightbox.show();
+  if (searchQuery == '') {
+    iziToast.warning({
+      title: 'No request',
+      message: 'Please add query for request',
+    });
+    return;
   }
+  galleryHandler(searchQuery, page);
 });
 
 function galleryHandler(searchQuery, page) {
